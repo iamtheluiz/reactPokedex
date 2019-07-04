@@ -1,0 +1,18 @@
+#pokemonInfo {
+    background-color: white;
+    padding-bottom: 20px;
+}
+#pokemonInfo .basicInfo{
+    text-align: center;
+}
+#pokemonInfo .basicInfo img{
+    width: 230px;
+    height: 230px;
+    image-rendering: pixelated;
+}
+#pokemonInfo .basicInfo p{
+    margin-top: 5px;
+    font-size: 20pt;
+    font-weight: bold;
+    text-transform: capitalize;
+}

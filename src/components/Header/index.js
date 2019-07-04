@@ -20,7 +20,7 @@ export default class Header extends Component{
                     <KeyboardArrowLeft className="icon" />
                 </a>
                 <span>Pokédex</span>
-                <a href="#!">
+                <a href="/">
                     <Home className="icon" />
                 </a>
             </header>
