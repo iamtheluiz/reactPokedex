@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Refresh } from 'styled-icons/material/Refresh';
 
 /* API Import */
 import api from '../../services/api';
@@ -18,11 +19,18 @@ export default class PokemonList extends Component{
         this.loadPokemons();
     }
 
-    loadPokemons = async () => {
-        const response = await api.get('https://pokeapi.co/api/v2/pokemon/');
-        const { data: { results, next, previous, count } } = response;
-
+    loadPokemons = async (first = false) => {
+        let response = [];
         let poke = [];
+        if(this.state.nextPage === ""){
+            response = await api.get('https://pokeapi.co/api/v2/pokemon/');
+        }else{
+            response = await api.get(this.state.nextPage);
+
+            poke = this.state.pokemons;
+        }
+
+        const { data: { results, next, previous, count } } = response;
 
         // Get more information about each pokemon
         results.forEach(async (pokemon) => {
@@ -69,6 +77,9 @@ export default class PokemonList extends Component{
                         <p>{pokemon.name}</p>
                     </div>
                 ))}
+                <a href="#!" className="updatePokemons"onClick={this.loadPokemons}>
+                    <Refresh className="icon" />
+                </a>
             </div>
         );
     }
