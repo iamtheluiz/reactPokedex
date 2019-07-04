@@ -6,10 +6,17 @@ import {Home} from 'styled-icons/material/Home';
 import './styles.css';
 
 export default class Header extends Component{
+
+    componentDidMount(){
+        document.querySelector(".returnButton").onclick = () => {
+            window.history.back();
+        }
+    }
+
     render(){
         return(
             <header>
-                <a href="/">
+                <a href="#!" className="returnButton">
                     <KeyboardArrowLeft className="icon" />
                 </a>
                 <span>Pokédex</span>

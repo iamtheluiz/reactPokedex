@@ -4,6 +4,7 @@ header{
     align-items: center;
     justify-content: space-between;
     background-color: #c1392b;
+    user-select: none;
 }
 header span{
     color: white;

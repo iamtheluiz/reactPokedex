@@ -1,0 +1,11 @@
+.pokeContainer{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.pokeContainer .pokeItem p{
+    text-align: center;
+    margin-top: 3px;
+    text-transform: capitalize;
+}
