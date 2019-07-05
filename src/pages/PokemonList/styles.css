@@ -9,17 +9,19 @@
     width: 100%;
 }
 .pokeContainer .pokeForm #pokemonName{
-    width: 80%;
+    width: calc(80% - 7px);
     height: 40px;
     margin: 0;
     padding: 0;
+    padding-left: 7px;
+    font-size: 13pt;
     border: 0;
 }
 .pokeContainer .pokeForm button{
     width: 20%;
     height: 40px;
     margin: 0;
-    padding: 0;
+    padding: 0px 5px;
     border: 0;
 }
 .pokeContainer .pokeForm button .icon{

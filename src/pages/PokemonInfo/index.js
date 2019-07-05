@@ -39,7 +39,6 @@ export default class PokemonInfo extends Component{
                         <img src={this.state.pokemonInfo.front_default} alt={this.state.pokemonInfo.name} />
                         <p>{this.state.pokemonInfo.name}</p>
                     </div>
-                    
                 </div>
             </>
         );

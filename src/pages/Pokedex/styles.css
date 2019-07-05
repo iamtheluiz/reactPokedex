@@ -1,0 +1,20 @@
+.pokedexList{
+    width: 96%;
+    margin-left: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.pokedexList .link{
+    margin: 10px 5px;
+}
+.pokedexList .link a{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(214, 63, 18);
+    border: 2px solid rgb(172, 47, 9);
+    color: white;
+    text-decoration: none;
+    font-size: 14pt;
+}
