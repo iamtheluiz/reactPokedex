@@ -41,7 +41,7 @@ export default class PokemonInfo extends Component{
     loadPokemonInfo = async () => {
         const response = await api.get(`https://pokeapi.co/api/v2/pokemon/${this.props.match.params.id}/`);
 
-        const { id, name, sprites: { front_default }, stats, types } = response.data;
+        const { id, name, height, sprites: { front_default }, stats, types } = response.data;
 
         var pokemonTypes = [];
 
@@ -53,6 +53,7 @@ export default class PokemonInfo extends Component{
             pokemonInfo: {
                 id,
                 name,
+                height: height / 10,
                 front_default,
                 stats: stats,
                 types: pokemonTypes
@@ -72,9 +73,20 @@ export default class PokemonInfo extends Component{
                             <span key={type} className={type.toLowerCase()}>{type}</span>
                         ))}
                     </div>
-                    {this.state.pokemonInfo.stats.map((element) => (
-                        <p key={element.stat.name}><b>{this.capitalize(element.stat.name)}</b> => {element.base_stat}</p>
-                    ))}
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><b>Height</b></td>
+                                <td className="left-align">{this.state.pokemonInfo.height} m</td>
+                            </tr>
+                            {this.state.pokemonInfo.stats.map((element) => (
+                                <tr key={element.stat.name}>
+                                    <td><b>{this.capitalize(element.stat.name)}</b></td>
+                                    <td className="left-align">{element.base_stat}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </>
         );

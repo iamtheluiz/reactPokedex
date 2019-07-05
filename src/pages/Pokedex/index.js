@@ -51,6 +51,7 @@ export default class Pokedex extends Component{
             <>
                 <Header />
                 <div className="pokedexList">
+                    <h1>Select a Pokédex:</h1>
                     {this.state.pokedexList.map(pokedex => (
                         <div key={pokedex.key} className="link">
                             <a href={`/pokemons/${pokedex.key}`}>{pokedex.name}</a>

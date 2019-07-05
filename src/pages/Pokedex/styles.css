@@ -6,6 +6,12 @@
     align-content: center;
     justify-content: center;
 }
+.pokedexList h1{
+    background-color: white;
+    border: 2px solid grey;
+    padding: 10px;
+    border-radius: 5px;
+}
 .pokedexList .link{
     margin: 10px 5px;
 }
