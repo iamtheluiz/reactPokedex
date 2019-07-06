@@ -13,9 +13,9 @@ import envConfig from './envConfig.js';
 const Routes = () => (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-            <Route path={`${envConfig.serverPath}/`} exact component={Pokedex}></Route>
-            <Route path={`${envConfig.serverPath}/pokemons/:pokedexName`} exact component={PokemonList}></Route>
-            <Route path={`${envConfig.serverPath}/pokemon/:id`} exact component={PokemonInfo}></Route>
+            <Route path={`/`} exact component={Pokedex}></Route>
+            <Route path={`/pokemons/:pokedexName`} exact component={PokemonList}></Route>
+            <Route path={`/pokemon/:id`} exact component={PokemonInfo}></Route>
             <Route component={() => (<div>404 Not found </div>)} />
         </Switch>
     </BrowserRouter>
