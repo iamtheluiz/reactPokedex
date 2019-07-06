@@ -9,6 +9,9 @@ import api from '../../services/api';
 /* Styles */
 import './styles.css';
 
+/* Config */
+import envConfig from '../../envConfig.js';
+
 export default class Pokedex extends Component{
     state = {
         pokedexList: []
@@ -51,10 +54,12 @@ export default class Pokedex extends Component{
             <>
                 <Header />
                 <div className="pokedexList">
-                    <h1>Select a Pokédex:</h1>
+                    <div className="title">
+                        <h1>Select a Pokédex:</h1>
+                    </div>
                     {this.state.pokedexList.map(pokedex => (
                         <div key={pokedex.key} className="link">
-                            <a href={`/pokemons/${pokedex.key}`}>{pokedex.name}</a>
+                            <a href={`${envConfig.serverPath}/pokemons/${pokedex.key}`}>{pokedex.name}</a>
                         </div>
                     ))}
                 </div>

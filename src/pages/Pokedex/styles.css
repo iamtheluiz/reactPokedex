@@ -6,7 +6,14 @@
     align-content: center;
     justify-content: center;
 }
-.pokedexList h1{
+.pokedexList .title{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+.pokedexList .title h1{
+    width: 80%;
+    margin: 0 auto;
     background-color: white;
     border: 2px solid grey;
     padding: 10px;

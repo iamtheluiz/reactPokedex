@@ -7,12 +7,16 @@ import PokemonList from './pages/PokemonList';
 import PokemonInfo from './pages/PokemonInfo';
 import Pokedex from './pages/Pokedex';
 
+/* Config */
+import envConfig from './envConfig.js';
+
 const Routes = () => (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-            <Route path="/" exact component={Pokedex}></Route>
-            <Route path="/pokemon/:id" exact component={PokemonInfo}></Route>
-            <Route path="/pokemons/:pokedexName" exact component={PokemonList}></Route>
+            <Route path={`${envConfig.serverPath}/`} exact component={Pokedex}></Route>
+            <Route path={`${envConfig.serverPath}/pokemons/:pokedexName`} exact component={PokemonList}></Route>
+            <Route path={`${envConfig.serverPath}/pokemon/:id`} exact component={PokemonInfo}></Route>
+            <Route component={() => (<div>404 Not found </div>)} />
         </Switch>
     </BrowserRouter>
 );

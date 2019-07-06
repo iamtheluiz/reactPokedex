@@ -11,6 +11,9 @@ import Header from '../../components/Header';
 /* Style */
 import './styles.css';
 
+/* Config */
+import envConfig from '../../envConfig.js';
+
 class PokemonList extends Component {
 	state = {
 		pokemons: [],
@@ -97,7 +100,7 @@ class PokemonList extends Component {
 						</button>
 					</div>
 					{this.state.show.map(pokemon => (
-						<a href={`/pokemon/${pokemon.poke_id}`} key={pokemon.id} className="pokeItem">
+						<a href={`${envConfig.serverPath}/pokemon/${pokemon.poke_id}`} key={pokemon.id} className="pokeItem">
 							<img src={pokemon.img} alt={pokemon.name} />
 							<p>{pokemon.name}</p>
 						</a>

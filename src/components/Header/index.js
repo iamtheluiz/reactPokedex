@@ -5,6 +5,9 @@ import {Home} from 'styled-icons/material/Home';
 // Style
 import './styles.css';
 
+/* Config */
+import envConfig from '../../envConfig.js';
+
 export default class Header extends Component{
 
     componentDidMount(){
@@ -20,7 +23,7 @@ export default class Header extends Component{
                     <KeyboardArrowLeft className="icon" />
                 </a>
                 <span>Pokédex</span>
-                <a href="/">
+                <a href={`${envConfig.serverPath}`}>
                     <Home className="icon" />
                 </a>
             </header>

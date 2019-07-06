@@ -1,0 +1,3 @@
+module.exports = {
+    serverPath: '/reactPokedex'
+}
