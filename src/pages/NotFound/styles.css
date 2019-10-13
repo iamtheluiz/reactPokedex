@@ -1,12 +1,9 @@
-.App {
+div#NotFound {
   text-align: center;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
+div#NotFound .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -17,6 +14,14 @@
   color: white;
 }
 
-.App-link {
+div#NotFound .App-logo {
+  height: 40vmin;
+}
+
+div#NotFound header h1 {
+  margin: 0px;
+}
+
+div#NotFound .App-link {
   color: #09d3ac;
 }
