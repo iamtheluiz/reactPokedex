@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
 import './styles.css';
 
-function App() {
+// Components
+import IndexItem from '../../components/IndexItem';
+
+import pokedexIcon from '../../assets/pokeball.jpg';
+
+export default function Index() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="Index">
+      <h1>Pokemon!</h1>
+      <img src={pokedexIcon} alt="Pokedex Icon"/>
+      <div id="items">
+        <IndexItem href="/pokedex" title="Pokedex" color="#4bc1a7" />
+        <IndexItem href="/pokedex" title="Pokedex" color="#4bc1a7" />
+        <IndexItem href="/pokedex" title="Pokedex" color="#4bc1a7" />
+        <IndexItem href="/pokedex" title="Pokedex" color="#4bc1a7" />
+      </div>
     </div>
   );
 }
-
-export default App;
