@@ -16,6 +16,7 @@ div.pokeCard {
 }
 div.pokeCard strong {
   margin-bottom: 5px;
+  text-transform: capitalize;
 }
 div.pokeCard span.pokeType {
   font-size: 13px;
