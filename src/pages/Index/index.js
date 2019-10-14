@@ -2,15 +2,14 @@ import React from 'react';
 import './styles.css';
 
 // Components
+import MainMenu from '../../components/Menu';
 import IndexItem from '../../components/IndexItem';
-
-import pokedexIcon from '../../assets/pokeball.jpg';
 
 export default function Index() {
   return (
     <div id="Index">
-      <h1>Pokemon!</h1>
-      <img src={pokedexIcon} alt="Pokedex Icon"/>
+      <MainMenu />
+      <h1 className="title">Pokemon!</h1>
       <div id="items">
         <IndexItem href="/pokedex" title="Pokedex" color="#4bc1a7" />
         <IndexItem href="/pokedex" title="Pokedex" color="#4bc1a7" />

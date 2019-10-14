@@ -3,17 +3,6 @@ div#Index {
   min-height: 100vh;
   background-color: white;
 }
-div#Index > h1 {
-  margin: 15px;
-}
-div#Index > img {
-  width: 250px;
-  height: 250px;
-  position: absolute;
-  opacity: 0.1;
-  top: -100px;
-  right: -100px;
-}
 div#Index div#items {
   display: flex;
   width: 96%;
