@@ -1,0 +1,34 @@
+div.pokeCard {
+  position: relative;
+  height: 130px;
+  --margin: 5px;
+  box-sizing: border-box !important;
+  width: calc(50% - 2 *(var(--margin)));
+  margin: var(--margin);
+  background-color: #4ad1b2;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 12pt;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+div.pokeCard strong {
+  margin-bottom: 5px;
+}
+div.pokeCard span.pokeType {
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 5px;
+  width: fit-content !important;
+  padding: 5px;
+  background-color: #ffffff40;
+  border-radius: 5px;
+}
+div.pokeCard img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+}
