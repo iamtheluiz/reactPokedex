@@ -9,7 +9,7 @@ import Pokedex from './pages/Pokedex';
 // Export Routes
 export default function Routes() {
   return(
-    <BrowserRouter>
+    <BrowserRouter basename="/reactPokedex">
       <Switch>
         <Route path="/" exact component={Index} />
         <Route path="/pokedex" component={Pokedex} />
