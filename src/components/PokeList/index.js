@@ -7,7 +7,6 @@ import './styles.css';
 
 export default function PokeList() {
   const [pokemons, setPokemons] = useState([]);
-  const [pokeCount, setPokeCount] = useState(0);
   const [nextPage, setNextPage] = useState('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0');
 
   // Get info from pokeapi
@@ -18,10 +17,9 @@ export default function PokeList() {
   async function getPokeInfo() {
     const { data } = await axios.get(nextPage);
 
-    const { count, next, results } = data;
+    const { next, results } = data;
 
     setPokemons([...pokemons, ...results]);
-    setPokeCount(count);
     setNextPage(next);
   }
 
@@ -36,7 +34,7 @@ export default function PokeList() {
           key={index}
           index={index + 1}
           name={pokemon.name}
-          type={["Grass", "Poison"]}
+          info={pokemon.url}
         />
       ))}
       {nextPage !== null ? (

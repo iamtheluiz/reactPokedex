@@ -3,11 +3,25 @@ div#pokeList {
   flex-direction: row;
   flex-wrap: wrap;
 }
-div#pokeList button{
-  width: 90%;
-  margin-left: 5%;
+div#pokeList button {
+  height: 60px;
+  --margin: 5px;
+  outline: none;
+  border: 0px;
+  width: calc(100% - 2 *(var(--margin)));
+  margin: var(--margin);
+  background-color: #4ad1b2;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 12pt;
+  color: white;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  box-shadow: 0px 4px #30a086;
+}
+div#pokeList button:active {
+  box-shadow: 0px 0px #30a086;
+  transform: translateY(4px);
 }

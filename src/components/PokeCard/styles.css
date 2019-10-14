@@ -1,3 +1,14 @@
+@keyframes up-card {
+  0% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
 div.pokeCard {
   position: relative;
   height: 130px;
@@ -14,9 +25,18 @@ div.pokeCard {
   display: flex;
   flex-direction: column;
 }
+div.pokeCard:hover {
+  animation-name: up-card;
+  animation-duration: 0.5s;
+}
 div.pokeCard strong {
   margin-bottom: 5px;
   text-transform: capitalize;
+}
+div.pokeCard p {
+  position: absolute;
+  right: 5px;
+  color: #00000040
 }
 div.pokeCard span.pokeType {
   font-size: 13px;
@@ -26,6 +46,7 @@ div.pokeCard span.pokeType {
   padding: 5px;
   background-color: #ffffff40;
   border-radius: 5px;
+  text-transform: capitalize;
 }
 div.pokeCard img {
   position: absolute;
