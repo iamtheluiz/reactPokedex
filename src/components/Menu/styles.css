@@ -1,6 +1,10 @@
 div#mainMenu {
   height: 64px;
   display: flex;
+  padding: 0 20px;
   justify-content: space-between;
   align-items: center;
+}
+div#mainMenu a img {
+  width: 20px;
 }
