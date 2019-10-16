@@ -8,7 +8,7 @@ import IndexItem from '../../components/IndexItem';
 export default function Index() {
   return (
     <div id="Index">
-      <MainMenu />
+      <MainMenu displayNone href="#!" />
       <h1 className="title">Pokemon!</h1>
       <div id="items">
         <IndexItem href="/pokedex" title="Pokedex" color="#4bc1a7" />

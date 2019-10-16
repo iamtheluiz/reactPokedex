@@ -21,7 +21,7 @@ const getHomeTimeline = (node, delay) => {
 }
 
 export const play = (pathname, node, appears) => {
-  const delay = appears ? 0 : 0.2;
+  const delay = appears ? 0 : 0.25;
   let timeline
 
   if (pathname === '/')

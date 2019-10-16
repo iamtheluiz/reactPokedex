@@ -1,0 +1,68 @@
+div#Pokemon {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+div#Pokemon h1.title {
+  text-transform: capitalize;
+  color: white;
+}
+div#Pokemon div#types span.pokeType {
+  margin-left: 10px;
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 5px;
+  width: fit-content !important;
+  padding: 5px 10px;
+  background-color: #ffffff40;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+div#Pokemon div#pokemonImage {
+  width: 100%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+div#Pokemon div#pokemonImage img {
+  width: 50%;
+  margin: 0 auto;
+  z-index: 100;
+}
+div#Pokemon div#pokemonInfo {
+  margin-top: -15px;
+  padding: 20px 10px;
+  border-radius: 15px 15px 0px 0px;
+  width: 100%;
+  background-color: white;
+  flex: 1;
+}
+div#Pokemon div#pokemonInfo div#tabs {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  z-index: 200;
+}
+div#Pokemon div#pokemonInfo div#tabs button.item {
+  background-color: transparent;
+  border: 0px;
+  outline: none;
+  color: gray;
+  font-size: 15px;
+  text-decoration: none;
+}
+div#Pokemon div#pokemonInfo div.tabBody {
+  margin-top: 10px;
+}
+div#Pokemon div#pokemonInfo div.tabBody table tr td {
+  padding: 3px 10px;
+  font-size: 14px;
+}
+div#Pokemon div#pokemonInfo div.tabBody table tr td:nth-child(1) {
+  color: grey;
+}
+div#Pokemon div#pokemonInfo div.tabBody h4 {
+  margin: 10px;
+}

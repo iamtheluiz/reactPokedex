@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
 import colors from '../../config/colors';
 
 import './styles.css';
 
-export default function PokeCard(props) {
+function PokeCard(props) {
   const [pokeNum, setPokeNum] = useState(props.index.toString().split('').length);
-  const [types, setTypes] = useState([{
-    type: {
-      name: ""
-    }
-  }]);
+  const [pokemonData, setPokemonData] = useState({
+    types: [{
+      type: {
+        name: ""
+      }
+    }]
+  });
 
   useEffect(() => {
     let num = '';
@@ -24,21 +27,32 @@ export default function PokeCard(props) {
     setPokeNum(num);
 
     // Get pokemon info
-    getPokemonInfo();
+    getPokemonInfo(num);
   }, []);
 
-  async function getPokemonInfo() {
-    const { data } = await axios.get(props.info);
+  async function getPokemonInfo(num) {
+    let { data } = await axios.get(props.info);
 
-    setTypes(data.types.reverse());
+    data.types = data.types.reverse();
+    data.num = num;
+
+    setPokemonData(data);
+  }
+
+  function handleUserClick() {
+    localStorage.setItem('@react-pokedex/pokemon', JSON.stringify(pokemonData));
+
+    props.history.push('/pokemon/');
   }
 
   return (
-    <div className="pokeCard" style={{ backgroundColor: colors[types[0].type.name] }}>
+    <div className="pokeCard" style={{ backgroundColor: colors[pokemonData.types[0].type.name] }} onClick={handleUserClick}>
       <strong>{props.name}</strong>
       <p>#{pokeNum}</p>
-      {types.map(type => <span key={type.type.name} className="pokeType">{type.type.name}</span>)}
+      {pokemonData.types.map(type => <span key={type.type.name} className="pokeType">{type.type.name}</span>)}
       <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokeNum}.png`} alt="Pokemon"/>
     </div>
   );
 }
+
+export default withRouter(PokeCard);

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../../assets/logo.svg';
 import './styles.css';
 
 function App() {
+  useEffect(() => {
+    document.querySelector("meta[name='theme-color']").setAttribute("content", "#000");
+  }, []);
+
   return (
     <div id="NotFound">
       <header className="App-header">
