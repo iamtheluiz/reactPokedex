@@ -128,7 +128,7 @@ export default function Pokemon() {
           <table>
             <tbody>
               {info.stats.map(stat => (
-                <tr>
+                <tr key={stat.stat.name}>
                   <td style={{ textTransform: "capitalize" }}>{stat.stat.name.split("-").join(" ")}</td>
                   <td>{stat.base_stat}</td>
                 </tr>
