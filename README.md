@@ -1,5 +1,5 @@
 <p align="center">
-  📕 React Pokedex
+  🐹⚡ React Pokedex
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
 
 <img src=".github/banner.png" alt="Captura de Tela da Página Inicial" />
 
-## 📕 React Pokedex
+🐹⚡ React Pokedex
 
 This is a project used to learn concepts of ReactJS.
 
