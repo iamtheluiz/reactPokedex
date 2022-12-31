@@ -27,6 +27,10 @@ This is a project used to learn concepts of ReactJS.
   </table>
 </p>
 
+## Design From
+
+* **Pokedex App** by [Saepul Nahwan](https://dribbble.com/saepulnahwan23) - https://dribbble.com/shots/6545819-Pokedex-App
+
 ## 🏃 Getting Started
 
 First, clone this repository and access the created folder:
