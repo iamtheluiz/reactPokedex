@@ -21,3 +21,6 @@ a.IndexItem > img {
   filter: invert(1);
   opacity: 0.6;
 }
+a.IndexItem > strong {
+  text-transform: capitalize;
+}

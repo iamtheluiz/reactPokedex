@@ -34,4 +34,5 @@ body div.container img#pokeballIcon {
 }
 body div.container h1.title {
   margin: 15px;
+  text-transform: capitalize;
 }

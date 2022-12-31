@@ -7,7 +7,8 @@ import colors from '../../config/colors';
 import './styles.css';
 
 function PokeCard(props) {
-  const [pokeNum, setPokeNum] = useState(props.index.toString().split('').length);
+  console.log(props.id.split(''))
+  const [pokeNum, setPokeNum] = useState(props.id.split('').length);
   const [pokemonData, setPokemonData] = useState({
     types: [{
       type: {
@@ -23,7 +24,7 @@ function PokeCard(props) {
       num += '0';
     }
 
-    num += props.index;
+    num += props.id;
     setPokeNum(num);
 
     // Get pokemon info

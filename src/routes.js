@@ -27,7 +27,7 @@ export default function Routes() {
             >
               <Switch location={location}>
                 <Route path="/" exact component={Index} />
-                <Route path="/pokedex" component={Pokedex} />
+                <Route path="/:name" component={Pokedex} />
                 <Route path="/pokemon" component={Pokemon} />
                 <Route path="*" component={NotFound} />
               </Switch>

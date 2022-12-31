@@ -5,9 +5,9 @@ import PokeCard from '../../components/PokeCard';
 
 import './styles.css';
 
-export default function PokeList() {
+export default function PokeList({ name, defaultNextPage }) {
   const [pokemons, setPokemons] = useState([]);
-  const [nextPage, setNextPage] = useState('https://pokeapi.co/api/v2/pokemon/?limit=60&offset=0');
+  const [nextPage, setNextPage] = useState(defaultNextPage);
 
   // Get info from pokeapi
   useEffect(() => {
@@ -28,9 +28,19 @@ export default function PokeList() {
   async function getPokeInfo() {
     const { data } = await axios.get(nextPage);
 
-    const { next, results } = data;
+    console.log(data)
 
-    setPokemons([...pokemons, ...results]);
+    const { next = null, results, pokemon_entries } = data;
+
+    if (results) {
+      setPokemons([...pokemons, ...results]);
+    } else if (pokemon_entries) {
+      setPokemons([...pokemons, ...pokemon_entries.map(pokemon => ({
+        name: pokemon.pokemon_species.name,
+        url: pokemon.pokemon_species.url.split('-species').join('')
+      }))]);
+    }
+
     setNextPage(next);
   }
 
@@ -45,6 +55,7 @@ export default function PokeList() {
           <PokeCard
             key={index}
             index={index + 1}
+            id={pokemon.url.split('/')[6]}
             name={pokemon.name}
             info={pokemon.url}
           />
