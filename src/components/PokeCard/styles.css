@@ -10,10 +10,7 @@
   }
 }
 div.pokeCard {
-  --margin: 5px;
-  box-sizing: border-box !important;
-  width: calc(100% - 2 *(var(--margin)));
-  margin: var(--margin);
+  width: 100%;
   background-color: #4ad1b2;
   padding: 15px;
   border-radius: 5px;
@@ -24,31 +21,21 @@ div.pokeCard {
   flex-direction: column;
   cursor: pointer;
 }
-@media (min-width: 550px) {
-  div.pokeCard {
-    --margin: 5px;
-    width: calc(50% - 2 *(var(--margin)));
-    margin: var(--margin);
-  }
-}
-@media (min-width: 760px) {
-  div.pokeCard {
-    --margin: 5px;
-    width: calc(33.333% - 2 *(var(--margin)));
-    margin: var(--margin);
-  }
-}
-@media (min-width: 1050px) {
-  div.pokeCard {
-    --margin: 5px;
-    width: calc(25% - 2 *(var(--margin)));
-    margin: var(--margin);
-  }
+div.pokeCard:hover {
+  animation-name: up-card;
+  animation-duration: 0.5s;
 }
 div.pokeCard header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+div.pokeCard header strong {
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+div.pokeCard header p {
+  color: #00000040
 }
 div.pokeCard .body {
   display: flex;
@@ -60,19 +47,7 @@ div.pokeCard .body .typesContainer {
   flex-direction: row;
   gap: 4px;
 }
-div.pokeCard:hover {
-  animation-name: up-card;
-  animation-duration: 0.5s;
-}
-div.pokeCard strong {
-  margin-bottom: 5px;
-  text-transform: capitalize;
-}
-div.pokeCard p {
-  right: 5px;
-  color: #00000040
-}
-div.pokeCard span.pokeType {
+div.pokeCard .typesContainer span.pokeType {
   height: 26px;
   font-size: 13px;
   text-align: center;
@@ -83,7 +58,7 @@ div.pokeCard span.pokeType {
   border-radius: 5px;
   text-transform: capitalize;
 }
-div.pokeCard img {
-  height: 130px;
+div.pokeCard .imageContainer img {
+  height: 120px;
   width: auto;
 }

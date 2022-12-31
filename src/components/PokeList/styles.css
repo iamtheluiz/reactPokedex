@@ -1,15 +1,35 @@
 div#pokeList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  padding: 6px 16px;
 }
-div#pokeList button {
+
+@media (min-width: 550px) {
+  div#pokeList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 760px) {
+  div#pokeList {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1050px) {
+  div#pokeList {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+footer#pokeFooter {
+  padding: 0px 16px;
+}
+footer#pokeFooter button {
   height: 60px;
-  --margin: 5px;
   outline: none;
   border: 0px;
-  width: calc(100% - 2 *(var(--margin)));
-  margin: var(--margin);
+  margin-bottom: 16px;
+  width: 100%;
   background-color: #4ad1b2;
   padding: 15px;
   border-radius: 5px;
@@ -21,7 +41,7 @@ div#pokeList button {
   align-items: center;
   box-shadow: 0px 4px #30a086;
 }
-div#pokeList button:active {
+footer#pokeFooter button:active {
   box-shadow: 0px 0px #30a086;
   transform: translateY(4px);
 }

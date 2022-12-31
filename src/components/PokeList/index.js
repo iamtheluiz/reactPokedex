@@ -28,20 +28,24 @@ export default function PokeList() {
   }
 
   return (
-    <div id="pokeList">
-      {pokemons.map((pokemon, index) => (
-        <PokeCard
-          key={index}
-          index={index + 1}
-          name={pokemon.name}
-          info={pokemon.url}
-        />
-      ))}
-      {nextPage !== null ? (
-        <button onClick={handleLoadMore}>More!</button>
-      ) : (
-        <p>End!</p>
-      )}
-    </div>
+    <>
+      <div id="pokeList">
+        {pokemons.map((pokemon, index) => (
+          <PokeCard
+            key={index}
+            index={index + 1}
+            name={pokemon.name}
+            info={pokemon.url}
+          />
+        ))}
+      </div>
+      <footer id="pokeFooter">
+        {nextPage !== null ? (
+          <button onClick={handleLoadMore}>More!</button>
+        ) : (
+          <p>End!</p>
+        )}
+      </footer>
+    </>
   );
 }
