@@ -19,6 +19,9 @@ body {
 body div.container {
   display: flex;
   overflow-x: hidden;
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 body div.container img#pokeballIcon {

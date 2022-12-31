@@ -33,7 +33,6 @@ function PokeCard(props) {
   async function getPokemonInfo(num) {
     let { data } = await axios.get(props.info);
 
-    data.types = data.types.reverse();
     data.num = num;
 
     setPokemonData(data);
@@ -46,11 +45,23 @@ function PokeCard(props) {
   }
 
   return (
-    <div className="pokeCard" style={{ backgroundColor: colors[pokemonData.types[0].type.name] }} onClick={handleUserClick}>
-      <strong>{props.name}</strong>
-      <p>#{pokeNum}</p>
-      {pokemonData.types.map(type => <span key={type.type.name} className="pokeType">{type.type.name}</span>)}
-      <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokeNum}.png`} alt="Pokemon"/>
+    <div
+      className="pokeCard"
+      style={{ backgroundColor: colors[pokemonData.types[0].type.name] }}
+      onClick={handleUserClick}
+    >
+      <header>
+        <strong>{props.name}</strong>
+        <p>#{pokeNum}</p>
+      </header>
+      <div className="body">
+        <div className="typesContainer">
+          {pokemonData.types.map(type => <span key={type.type.name} className="pokeType">{type.type.name}</span>)}
+        </div>
+        <div className="imageContainer">
+          <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokeNum}.png`} alt="Pokemon" />
+        </div>
+      </div>
     </div>
   );
 }
