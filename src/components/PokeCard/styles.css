@@ -59,6 +59,6 @@ div.pokeCard .typesContainer span.pokeType {
   text-transform: capitalize;
 }
 div.pokeCard .imageContainer img {
-  height: 120px;
+  height: 100px;
   width: auto;
 }

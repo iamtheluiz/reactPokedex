@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 
 import PokeCard from '../../components/PokeCard';
@@ -7,12 +7,23 @@ import './styles.css';
 
 export default function PokeList() {
   const [pokemons, setPokemons] = useState([]);
-  const [nextPage, setNextPage] = useState('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0');
+  const [nextPage, setNextPage] = useState('https://pokeapi.co/api/v2/pokemon/?limit=60&offset=0');
 
   // Get info from pokeapi
   useEffect(() => {
     getPokeInfo();
   }, []);
+
+  const observer = useRef()
+  const bottomRef = useCallback(node => {
+    if (observer.current) observer.current.disconnect()
+    observer.current = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && nextPage !== null) {
+        handleLoadMore()
+      }
+    })
+    if (node) observer.current.observe(node)
+  }, [nextPage]);
 
   async function getPokeInfo() {
     const { data } = await axios.get(nextPage);
@@ -41,9 +52,9 @@ export default function PokeList() {
       </div>
       <footer id="pokeFooter">
         {nextPage !== null ? (
-          <button onClick={handleLoadMore}>More!</button>
+          <button ref={bottomRef} onClick={handleLoadMore}>More!</button>
         ) : (
-          <p>End!</p>
+          <></>
         )}
       </footer>
     </>
